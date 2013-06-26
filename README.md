@@ -17,8 +17,6 @@ Basic Elasticsearch thrift transport protocol wrapper
 		}]}, function() {
 		console.log('connected');
 
-		search.closeConnections();
-
 		search.get({uri: '_stats'}, function(err, res){
 			console.log(err, res);
 			search.closeConnections();
