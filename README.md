@@ -8,7 +8,7 @@ Basic Elasticsearch thrift transport protocol wrapper
 ## Usage
 
 	var search,
-	ElasticSearch = require('../elasticsearch-thrift');
+	ElasticSearch = require('elasticsearch-thrift');
 
 	search = new ElasticSearch({
 		servers: [{
