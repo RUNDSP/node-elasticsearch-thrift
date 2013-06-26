@@ -271,11 +271,11 @@ ElasticSearchThrift.prototype.options = function (params, callback) {
  * answer to previous requests);
  */
 ElasticSearchThrift.prototype.closeConnections = function () {
-	var self = this;
+	var self = this.roundRobin.connections;
 	this.ready = false;
-	this.connectionUidList.forEach(function (uid) {
-		self.connections[uid].connection.end();
-	});
+	for (var uid in this.roundRobin.connections) {
+		self[uid].connection.end();
+	}
 };
 
 module.exports = ElasticSearchThrift;
